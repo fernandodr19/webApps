@@ -22,8 +22,16 @@ function loadEventListeners() {
 
 // Add Task
 function addTask(e) {
+  const msg = document.getElementById('addTaskMsg');
+    
   if(taskInput.value === '') {
-    alert('Add a task');
+    msg.style.background = 'red';
+    msg.textContent = 'Task cannot be empty';
+    msg.classList.remove('hide');
+    setTimeout(function() {
+        msg.classList.add('hide');
+    }, 3000);
+    return false;
   }
 
   // Create li element
@@ -46,6 +54,15 @@ function addTask(e) {
 
   // Clear input
   taskInput.value = '';
+    
+  // Success message
+  msg.style.background = 'green';
+  msg.textContent = 'Task successfully added';
+  msg.classList.remove('hide');
+  setTimeout(function() {
+      msg.classList.add('hide');
+  }, 3000);
+  
 
   e.preventDefault();
 }
