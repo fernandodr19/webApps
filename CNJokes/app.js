@@ -7,6 +7,10 @@ function getJokes(e) {
 
   xhr.open('GET', `http://api.icndb.com/jokes/random/${number}`, true);
 //  xhr.open('GET', 'localFile.json', true); could also be a local file
+  //GET
+  //POST (SET)
+  //PUT (UPDATE)
+  //DELETE
 
   xhr.onload = function() {
     if(this.status === 200) {
