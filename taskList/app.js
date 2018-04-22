@@ -22,14 +22,14 @@ function loadEventListeners() {
 
 // Add Task
 function addTask(e) {
-  const msg = document.getElementById('addTaskMsg');
+  const successMsg = document.getElementById('successMsg');
+  const errorMsg = document.getElementById('errorMsg');
     
   if(taskInput.value === '') {
-    msg.style.background = 'red';
-    msg.textContent = 'Task cannot be empty';
-    msg.classList.remove('hide');
+    successMsg.classList.add('hide');
+    errorMsg.classList.remove('hide');
     setTimeout(function() {
-        msg.classList.add('hide');
+        errorMsg.classList.add('hide');
     }, 3000);
     return false;
   }
@@ -56,13 +56,11 @@ function addTask(e) {
   taskInput.value = '';
     
   // Success message
-  msg.style.background = 'green';
-  msg.textContent = 'Task successfully added';
-  msg.classList.remove('hide');
+  errorMsg.classList.add('hide');
+  successMsg.classList.remove('hide');
   setTimeout(function() {
-      msg.classList.add('hide');
+      successMsg.classList.add('hide');
   }, 3000);
-  
 
   e.preventDefault();
 }
