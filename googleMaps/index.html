@@ -27,16 +27,36 @@
                 </div>
               </td>
           </tr>
+          <tr>
             <td>
                 <h1>Heat map</h1>
                 <div id="heatMap" class="map">
                 </div>
             </td>
-    
+            <td>
+                <h1>Cluster map</h1>
+                <div id="clusterMap" class="map">
+                </div>
+            </td>
+            <td>
+                <h1>Search box</h1>
+                <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+                <div id="searchMap" class="map"></div>
+            </td>
+          </tr>
       </table>
       
       <script src="app.js"></script>
       
+<!--      Only for mark cluster-->
+      <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+    </script>
+      
+<!--      Only for heatmap libraries=visualization-->
       <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClxaSuts2bxyi25NYPdwx_7aLMcVtjrVc&libraries=visualization&callback=initMap"async defer></script>
+      
+<!--      Only for serachbox libraries=visualization-->
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClxaSuts2bxyi25NYPdwx_7aLMcVtjrVc&libraries=places&callback=initAutocomplete"
+         async defer></script>
   </body>
 </html>
