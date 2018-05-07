@@ -31,6 +31,7 @@ function addTask(e) {
     setTimeout(function() {
         errorMsg.classList.add('hide');
     }, 3000);
+    e.preventDefault();
     return false;
   }
 
