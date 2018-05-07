@@ -6,6 +6,7 @@ function initMap() {
     initCircleMarkMap();
     initHeatMap();
     initClusterMap();
+    initAutocomplete();
 }
 
 function initBaseMap() {
